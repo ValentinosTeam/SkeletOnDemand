@@ -36,7 +36,8 @@ namespace SkeletOnDemand
             Player player = ev.Player;
             if (player.DoNotTrack)
             {
-                SkeletOnDemand.Singleton.OptInConfig.PlayerConsent.Remove(player.UserId);
+                // Logger.Info("Player has DNT removing him from database...");
+                SkeletOnDemand.Singleton.OptInConfig.RemoveUser(player.UserId);
             }
         }
 
@@ -76,6 +77,7 @@ namespace SkeletOnDemand
                 duration = SkeletOnDemand.Singleton.Config.HintDuration;
                 hintMessage = SkeletOnDemand.Singleton.Config.HintMessage;
             }
+            // has to spawn a little delayed cause otherwise crash.
             Timing.CallDelayed(0.1f, () =>
             {
                 player.SetRole(RoleTypeId.Scp3114, RoleChangeReason.RemoteAdmin, RoleSpawnFlags.All);

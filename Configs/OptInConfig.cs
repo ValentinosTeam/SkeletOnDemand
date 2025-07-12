@@ -7,7 +7,6 @@ namespace SkeletOnDemand.Configs
     {
         public const string ConfigName = "user-consent.yml";
         public const string Permission = "skeletondemand";
-        // public static readonly float SpawnChance = SkeletOnDemand.Singleton.Config
         public Dictionary<string, bool> PlayerConsent { get; set; } = new Dictionary<string, bool>();
 
         public bool PlayerOptedIn(string userId)
@@ -20,6 +19,13 @@ namespace SkeletOnDemand.Configs
         {
             PlayerConsent[userId] = value;
             SkeletOnDemand.Singleton.SaveConfig(this, ConfigName);
+        }
+
+        public void RemoveUser(string userId)
+        {
+            PlayerConsent.Remove(userId);
+            SkeletOnDemand.Singleton.SaveConfig(this, ConfigName);
+
         }
     }
 }
