@@ -1,0 +1,8 @@
+.idea/
+SkeletOnDemand.csproj
+SkeletOnDemand.sln
+SkeletOnDemand.sln.DotSettings.user
+bin/
+obj/
+packages.config
+packages/
