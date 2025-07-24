@@ -35,7 +35,7 @@ namespace SkeletOnDemand
         public override string Description { get; } =
             "Allows users to use a command to opt in to this plugin to have a chance to become a skeleton when they spawn in as an SCP";
         public override string Author { get; } = "Alex_Joo";
-        public override Version Version { get; } = new Version(1, 0, 0);
+        public override Version Version { get; } = new Version(1, 0, 1);
         public override Version RequiredApiVersion { get; } = new Version(LabApiProperties.CompiledVersion);
     }
 }

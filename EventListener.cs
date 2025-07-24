@@ -39,6 +39,10 @@ namespace SkeletOnDemand
                 // Logger.Info("Player has DNT removing him from database...");
                 SkeletOnDemand.Singleton.OptInConfig.RemoveUser(player.UserId);
             }
+            else if (!player.HasPermissions(OptInConfig.Permission))
+            {
+                SkeletOnDemand.Singleton.OptInConfig.OptIn(player.UserId, false);
+            }
         }
 
         public override void OnServerRoundStarted()
